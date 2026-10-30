@@ -1,0 +1,39 @@
+{
+  "name": "copilot-reset-countdown",
+  "displayName": "Copilot Reset Countdown",
+  "description": "Displays the number of days until your Copilot usage limit resets.",
+  "version": "1.0.0",
+  "publisher": "local-dev",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilotResetCountdown.setResetDate",
+        "title": "Copilot Reset Countdown: Set Reset Date"
+      },
+      {
+        "command": "copilotResetCountdown.chooseResetDate",
+        "title": "Copilot Reset Countdown: Choose Reset Date (Calendar)"
+      }
+    ],
+    "configuration": {
+      "title": "Copilot Reset Countdown",
+      "properties": {
+        "copilotResetCountdown.resetDate": {
+          "type": "string",
+          "default": "",
+          "description": "Copilot usage limit reset date in YYYY-MM-DD format."
+        }
+      }
+    }
+  }
+}
